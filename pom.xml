@@ -24,6 +24,7 @@
 
   <modules>
     <module>zipkin2</module>
+    <module>zipkin-v1</module>
     <module>zipkin</module>
     <module>zipkin-ui</module>
     <module>zipkin-junit</module>
