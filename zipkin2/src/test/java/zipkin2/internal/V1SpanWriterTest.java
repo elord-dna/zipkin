@@ -1,5 +1,5 @@
 /**
- * Copyright 2015-2017 The OpenZipkin Authors
+ * Copyright 2015-2018 The OpenZipkin Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -15,9 +15,7 @@ package zipkin2.internal;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import zipkin2.Endpoint;
 import zipkin2.Span;
 
@@ -27,8 +25,6 @@ import static zipkin2.TestObjects.CLIENT_SPAN;
 public class V1SpanWriterTest {
   V1SpanWriter writer = new V1SpanWriter();
   Buffer buf = new Buffer(2048); // bigger than needed to test sizeOf
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test public void sizeInBytes() throws IOException {
     writer.write(CLIENT_SPAN, buf);
